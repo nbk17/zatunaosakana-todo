@@ -17,6 +17,28 @@
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
+.tests{
+  background-color: blue;
+}
+
+.all  {
+  background-color: red;
+}
+
+body {
+  background: linear-gradient(to bottom,
+      rgba(173, 216, 230, 0.5),
+      /* 明るい水色 */
+      rgba(0, 123, 167, 0.7),
+      /* セルリアンブルー */
+      rgba(0, 70, 140, 0.8)
+      /* 深海のような青 */
+    );
+  backdrop-filter: blur(4px);
+  /* 少しぼかして柔らかい印象に */
+  height: 100vh;
+  margin: 0;
+}
 
 @keyframes logo-spin {
   from {
