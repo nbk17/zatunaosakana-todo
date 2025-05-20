@@ -1,35 +1,64 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [tasks, setTasks] = useState<string[]>([]);
+  const [taskInput, setTaskInput] = useState<string>("");
+  const [fishCount, setFishCount] = useState<number>(0);
+
+  const addTask = () => {
+    if (taskInput.trim() !== "") {
+      setTasks([...tasks, taskInput.trim()]); // 新しいタスクを追加
+      setFishCount(fishCount + 1); // 魚の数を増やす
+      setTaskInput(""); // 入力欄をクリア
+    } else {
+      alert("タスクを入力してください！");
+    }
+  };
+
+  const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      addTask();
+    }
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+    <div className="container">
+      <h1>私のToDoリスト</h1>
+
+      <div className="todo-input-area">
+        <input
+          type="text"
+          id="taskInput"
+          placeholder="新しいタスクを入力..."
+          value={taskInput}
+          onChange={(e) => setTaskInput(e.target.value)}
+          onKeyPress={handleKeyPress}
+        />
+        <button id="addTaskButton" onClick={addTask}>
+          タスクを追加
         </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+
+      <div className="todo-list-area">
+        <h2>今日のタスク</h2>
+        <ul id="taskList">
+          {tasks.map((task, index) => (
+            <li key={index}>{task}</li> // 各タスクにユニークなkeyを設定
+          ))}
+        </ul>
+      </div>
+
+      <div className="fish-tank-area">
+        <h2>私の魚たち</h2>
+        <div id="fishTank">
+          {Array.from({ length: fishCount }).map((_, index) => (
+            <div key={index} className="fish"></div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
 }
 
-export default App
+export default App;

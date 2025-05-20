@@ -1,13 +1,32 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="ja">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React + TS</title>
+    <title>ToDoリストと魚たち</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <div class="container">
+      <h1>私のToDoリスト</h1>
+
+      <div class="todo-input-area">
+        <input type="text" id="taskInput" placeholder="新しいタスクを入力..." />
+        <button id="addTaskButton">タスクを追加</button>
+      </div>
+
+      <div class="todo-list-area">
+        <h2>今日のタスク</h2>
+        <ul id="taskList"></ul>
+      </div>
+
+      <div class="fish-tank-area">
+        <h2>私の魚たち</h2>
+        <div id="fishTank"></div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script type="module" src="/src/App.tsx"></script>
   </body>
 </html>
