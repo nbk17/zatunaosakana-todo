@@ -1,5 +1,5 @@
 #root {
-  max-width: 1280px;
+  max-width: 1500px;
   margin: 0 auto;
   padding: 2rem;
   /* text-align: center;  これは残しても良いですが、もし全体を左寄せにしたい場合は削除 */
@@ -167,7 +167,7 @@ h2 {
   0% {
     transform: translateX(0);
   }
-  50% {
+  70% {
     transform: translateX(20px);
   } /* 少し左右に動かす */
   100% {
