@@ -114,6 +114,27 @@ h2 {
   align-items: center;
 }
 
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  /* はみ出しを防ぐ */
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: inherit;
+}
+
 .fish-tank-area {
   border: 2px solid #a0c4ff;
   background-color: #e0f2f7;
@@ -121,9 +142,11 @@ h2 {
   padding: 15px;
   border-radius: 8px;
   display: flex;
-  flex-wrap: wrap; /* 魚が複数行になるように */
+  flex-wrap: wrap;
+  /* 魚が複数行になるように */
   gap: 10px;
-  justify-content: flex-start; /* 左寄せ */
+  justify-content: flex-start;
+  /* 左寄せ */
   align-items: center;
 }
 
@@ -174,3 +197,4 @@ h2 {
     transform: translateX(0);
   }
 }
+
