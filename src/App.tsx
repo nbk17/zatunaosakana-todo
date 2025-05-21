@@ -12,7 +12,7 @@ function App() {
       setFishCount(fishCount + 1); // 魚の数を増やす
       setTaskInput(""); // 入力欄をクリア
     } else {
-      alert("タスクを入力してください！");
+      alert("お魚の誕生！");
     }
   };
 
