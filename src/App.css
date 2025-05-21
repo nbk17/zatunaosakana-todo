@@ -5,7 +5,6 @@
   /* text-align: center;  これは残しても良いですが、もし全体を左寄せにしたい場合は削除 */
 }
 
-/* ViteとReactの初期ロゴアニメーションなどはそのまま残します */
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -123,7 +122,7 @@ h2 {
   display: flex;
   flex-wrap: wrap; /* 魚が複数行になるように */
   gap: 10px;
-  justify-content: flex-start; /* 左寄せ */
+  justify-content: flex-start; 
   align-items: center;
 }
 

@@ -44,7 +44,7 @@ function App() {
         <h2>今日のタスク</h2>
         <ul id="taskList">
           {tasks.map((task, index) => (
-            <li key={index}>{task}</li> // 各タスクにユニークなkeyを設定
+            <li key={index}>{task}</li> 
           ))}
         </ul>
       </div>
