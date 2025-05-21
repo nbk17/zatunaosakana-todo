@@ -4,7 +4,7 @@
   padding: 2rem;
   /* text-align: center;  これは残しても良いですが、もし全体を左寄せにしたい場合は削除 */
 }
-
+/*できたらいいな、ToDoリスト*/
 /* ViteとReactの初期ロゴアニメーションなどはそのまま残します */
 .logo {
   height: 6em;
