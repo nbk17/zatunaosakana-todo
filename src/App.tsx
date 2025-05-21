@@ -24,7 +24,7 @@ function App() {
 
   return (
     <div className="container">
-      <h1>私のToDoリスト</h1>
+      <h1>ToDoリスト</h1>
 
       <div className="todo-input-area">
         <input
