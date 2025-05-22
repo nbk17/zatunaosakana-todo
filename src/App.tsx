@@ -1,42 +1,47 @@
-import { useState } from "react";
-import './App.css';
-import TodoList from './Todolist.tsx'
+import './App.css'
+import TodoList from './components/Todolist'
+import { useState } from 'react'
+import {v4 as uuidv4} from 'uuid';
 
-function App() {
-
-  const [todos, setTodos] = useState([
-    {id: 1, name: 'todo1', completed: false}
+function App(){
+  const [todos,setTodos] = useState([
+    //{id: 1, name: 'todo1', completed:false}
   ])
-  //const [tasks, setTasks] = useState<string[]>([]);
-  //const [taskInput, setTaskInput] = useState<string>("");
-  //const [fishCount, setFishCount] = useState<number>(0);
 
-  //const addTask = () => {
-  //  if (taskInput.trim() !== "") {
-  //    setTasks([...tasks, taskInput.trim()]); // 新しいタスクを追加
-  //    setFishCount(fishCount + 1); // 魚の数を増やす
-  //    setTaskInput(""); // 入力欄をクリア
-  //  } else {
-  //    alert("タスクを入力してください！");
-  //  }
-  //};
+  const [inputValue, setInputValue] = useState('')
 
-  //const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
-  //  if (e.key === "Enter") {
-  //    addTask();
-  //  }
-  //};
+  const handleInputValue = (e) =>{
+    setInputValue(e.target.value)
+  }
 
-  return (
-    <div>
-      <h1>おさかなToDoリスト</h1>
-      <p>残りのおさかな：0</p>
-      <input />
-      <button>おさかなを増やす</button>
-      <button>おさかなを食べる</button>
-      <TodoList todos={todos} />
-    </div>
-  );
+  const handleAddTodo = () =>{
+    if(inputValue === '')return
+    setTodos((prevTodos)=>{
+      return[...prevTodos,{id:uuidv4(), name:inputValue, completed:false}]
+    })
+    setInputValue('')
+  }
+  //todo追加
+  const todoCompleted = (id) =>{
+    const newTodos = [...todos]
+    const checkedTodo = newTodos.find((newTodo)=> newTodo.id === id)
+    checkedTodo.completed = !checkedTodo.completed
+    setTodos(newTodos)
+  }
+
+  //todo削除
+  const handleClear=()=>{
+    setTodos(todos.filter(todo=> !todo.completed))
+  }
+  return(
+    <>
+    <h1>雑なおさかなTodoリスト</h1>
+    <p>残りのタスク：{todos.filter(todo => !todo.completed).length} </p>
+    <input value={inputValue} onChange={handleInputValue}/>
+    <button onClick={handleAddTodo}>追加</button>
+    <button onClick={handleClear}>削除</button>
+    <TodoList todos={todos} todoCompleted={todoCompleted} />
+    </>
+  )
 }
-
 export default App;
