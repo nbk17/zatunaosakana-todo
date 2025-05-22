@@ -1,7 +1,20 @@
-1. git switch {自分のbranch}
-2. git add {変更したファイル}
-3. git commit -m {変更内容}
-4. git push origin {自分のbranch}
-5. git switch main
-6. git merge {自分のbranch}
-7. git push origin main
+プルする
+  git pull
+ブランチを切る
+  git switch -c <ブランチ名>
+*
+ステージングする
+  git add .
+  [VSCode]プラスボタンを押す
+コミットする
+  git commit -m "コミットメッセージ"
+  [VSCode]メッセージを追加してコミットボタンを押す
+*
+プッシュする
+  git push -u origin HEAD
+  (git push origin {作業ブランチ})
+  [VSCode]ブランチの発行ボタンを押す
+プルリクを作る
+  （ブラウザ上でプルリクを作る）
+マージする
+  （ブラウザ上でマージする）
