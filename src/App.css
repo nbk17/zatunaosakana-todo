@@ -2,7 +2,6 @@
   max-width: 1500px;
   margin: 0 auto;
   padding: 2rem;
-  /* text-align: center;  これは残しても良いですが、もし全体を左寄せにしたい場合は削除 */
 }
 
 /* ViteとReactの初期ロゴアニメーションなどはそのまま残します */
@@ -197,4 +196,3 @@ body {
     transform: translateX(0);
   }
 }
-
