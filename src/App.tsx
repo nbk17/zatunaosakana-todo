@@ -11,6 +11,7 @@ function App(){
 
   const [inputValue, setInputValue] = useState('')
 
+  const [isComposing, setIsComposing] = useState(false)
 
   const handleInputValue = (e) =>{
     setInputValue(e.target.value)
@@ -24,6 +25,13 @@ function App(){
     })
     setInputValue('')
   }
+
+  const handlekeyDown = (event) => {
+    if (event.key === 'Enter' && !isComposing) {
+      handleAddTodo()
+    }
+  }
+
   //todo追加
   const todoCompleted = (id) =>{
     const newTodos = [...todos]
@@ -40,7 +48,12 @@ function App(){
     <>
     <div className='contents'>
       <p>残りのおさかな：{todos.filter(todo => !todo.completed).length} </p>
-      <input value={inputValue} onChange={handleInputValue}/>
+        <input
+          value={inputValue}
+          onChange={handleInputValue}
+          onKeyDown={handlekeyDown}
+          onCompositionEnd={() => setIsComposing(false)}
+        />
       <button onClick={handleAddTodo}>おさかなをふやす</button>
       <button onClick={handleClear}>おさかなをたべる</button>
       <div className='aquarium'>
