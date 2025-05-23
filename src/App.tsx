@@ -59,8 +59,8 @@ function App(){
         />
         <img src='src\assets\ナンヨウハギモドキ.png'/>
         </div>
-      <button onClick={handleAddTodo}>おさかなをふやす</button>
-      <button onClick={handleClear}>おさかなをたべる</button>
+      <button onClick={handleAddTodo}>おさかなをふやす 🐟➕</button>
+      <button onClick={handleClear}>おさかなをたべる 🐟🍽️</button>
       <div className='aquarium'>
         <div className='fish'>
           <TodoList todos={todos} todoCompleted={todoCompleted} />
