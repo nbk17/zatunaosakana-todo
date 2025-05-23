@@ -1,4 +1,6 @@
 import React from "react";
+import RandomImage from './RandomImage.tsx'
+
 
 const TodoList = ({todos,todoCompleted}) =>{
     return(
@@ -9,6 +11,7 @@ const TodoList = ({todos,todoCompleted}) =>{
             
             return(
                 <div key={todo.id}>
+                    <RandomImage />
                     <label>
                         <input type="checkbox"
                         checked={todo.completed}

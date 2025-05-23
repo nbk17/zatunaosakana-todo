@@ -13,7 +13,18 @@ body {
 }
 .contents{
 }
-
+.inputArea{
+  position: relative;
+}
+.inputArea img{
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  z-index: -1;
+}
 .aquarium{
   position: relative;
   border: 2px solid;
@@ -29,7 +40,7 @@ body {
             rgba(10, 20, 60, 0.9),
             rgba(0, 128, 255, 0.5),
             rgba(0, 64, 128, 0.4)),
-            url('assets/aquarium.png');
+            url('assets/aquarium.jpg');
     background-size: contain;
     background-repeat: no-repeat;
     background-size: cover;
