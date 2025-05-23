@@ -1,5 +1,6 @@
 import React from "react";
 import RandomImage from './RandomImage.tsx'
+import './Todolist.css'
 
 
 const TodoList = ({todos,todoCompleted}) =>{
@@ -11,12 +12,15 @@ const TodoList = ({todos,todoCompleted}) =>{
             
             return(
                 <div key={todo.id}>
-                    <RandomImage />
-                    <label>
+                    <label className='listcontent'>
                         <input type="checkbox"
                         checked={todo.completed}
                         onChange={handleTodoClick}
                         />
+                        <div className="img">
+                            <RandomImage />
+                        </div>
+                        
                         {todo.name}
                     </label>
                 </div>
