@@ -38,12 +38,18 @@ function App(){
   }
   return(
     <>
-    <h1>雑なおさかなTodoリスト</h1>
-    <p>残りのおさかな：{todos.filter(todo => !todo.completed).length} </p>
-    <input value={inputValue} onChange={handleInputValue}/>
-    <button onClick={handleAddTodo}>おさかなをふやす</button>
-    <button onClick={handleClear}>おさかなをたべる</button>
-    <TodoList todos={todos} todoCompleted={todoCompleted} />
+    <div className='contents'>
+      <p>残りのおさかな：{todos.filter(todo => !todo.completed).length} </p>
+      <input value={inputValue} onChange={handleInputValue}/>
+      <button onClick={handleAddTodo}>おさかなをふやす</button>
+      <button onClick={handleClear}>おさかなをたべる</button>
+      <div className='aquarium'>
+        <div className='fish'>
+          <TodoList todos={todos} todoCompleted={todoCompleted} />
+        </div>
+      </div>
+      
+    </div>
     </>
   )
 }
