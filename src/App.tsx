@@ -10,7 +10,7 @@ function App(){
   ])
 
   const [inputValue, setInputValue] = useState('')
-
+// エンターで追加
   const [isComposing, setIsComposing] = useState(false)
 
   const handleInputValue = (e) =>{
@@ -25,7 +25,7 @@ function App(){
     })
     setInputValue('')
   }
-
+// エンターで追加
   const handlekeyDown = (event) => {
     if (event.key === 'Enter' && !isComposing) {
       handleAddTodo()
@@ -51,7 +51,8 @@ function App(){
         <input
           value={inputValue}
           onChange={handleInputValue}
-          onKeyDown={handlekeyDown}
+          // エンターで追加
+          onKeyDown={handlekeyDown} 
           onCompositionEnd={() => setIsComposing(false)}
         />
       <button onClick={handleAddTodo}>おさかなをふやす</button>
