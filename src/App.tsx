@@ -48,12 +48,16 @@ function App(){
     <>
     <div className='contents'>
       <p>残りのおさかな：{todos.filter(todo => !todo.completed).length} </p>
-        <input
+        <div className='inputArea'>
+          <input
+          className='inputArea'
           value={inputValue}
           onChange={handleInputValue}
           onKeyDown={handlekeyDown}
           onCompositionEnd={() => setIsComposing(false)}
         />
+        <img src='src\assets\ナンヨウハギモドキ.png'/>
+        </div>
       <button onClick={handleAddTodo}>おさかなをふやす</button>
       <button onClick={handleClear}>おさかなをたべる</button>
       <div className='aquarium'>
