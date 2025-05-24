@@ -11,12 +11,12 @@ body {
   height: 100%;
   width: 100%;
 }
-.contents{
+.contents {
 }
-.inputArea{
+.inputArea {
   position: relative;
 }
-.inputArea img{
+.inputArea img {
   position: absolute;
   top: 0;
   right: 0;
@@ -25,29 +25,29 @@ body {
   margin: auto;
   z-index: -1;
 }
-.aquarium{
+.aquarium {
   position: relative;
   border: 2px solid;
   border-radius: 20px;
   margin-top: 20px;
   top: 20%;
-  left: 20%;
-  height: 300px;
-  width: 60%;
+  left: 5%;
+  height: 900px;
+  width: 90%;
 
-  background:
-        linear-gradient(to bottom,
-            rgba(10, 20, 60, 0.9),
-            rgba(0, 128, 255, 0.5),
-            rgba(0, 64, 128, 0.4)),
-            url('assets/aquarium.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-  
+  background: linear-gradient(
+      to bottom,
+      rgba(10, 20, 60, 0.9),
+      rgba(0, 128, 255, 0.5),
+      rgba(0, 64, 128, 0.4)
+    ),
+    url("assets/aquarium.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
-.fish{
+.fish {
   position: absolute;
   top: 0;
   right: 0;
