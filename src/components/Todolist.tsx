@@ -20,8 +20,9 @@ const TodoList = ({todos,todoCompleted}) =>{
                         <div className="img">
                             <RandomImage />
                         </div>
-                        
-                        {todo.name}
+                        <p>
+                            {todo.name}
+                        </p>
                     </label>
                 </div>
             )
