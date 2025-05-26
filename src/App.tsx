@@ -47,7 +47,7 @@ function App(){
   return(
     <>
     <div className='contents'>
-      <p>残りのおさかな：{todos.filter(todo => !todo.completed).length} </p>
+      <p className='last'>残りのおさかな：{todos.filter(todo => !todo.completed).length} </p>
         <div className='inputArea'>
           <input
           className='inputArea'

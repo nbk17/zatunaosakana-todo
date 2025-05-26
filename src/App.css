@@ -54,4 +54,19 @@ body {
   bottom: 0;
   left: 0;
   margin: auto;
+  animation: slide 10s infinite;
+}
+
+@keyframes slide{
+  0% {transform: translate(0,0);}
+  12.5%{transform: translate(60px,100px);}
+  25%{transform: translate(50px,50px);}
+  50% {transform: translate(-100px,900px);}
+  75%{transform: translate(50px,-75px);}
+  100% {transform: translate(0,0);}
+} 
+
+.last{
+  background-color: rgba(255, 255, 255, 0.432);
+
 }
